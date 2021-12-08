@@ -16,25 +16,28 @@ function App() {
   //   return console.log(id);
   // };
 
-  const handleSubmitForm = (event) => {
-    event.preventDefault();
-    console.log("submited");
+  const handleChange = (event) => {
+    console.log(`${event.target.name}:  ${event.target.value}`);
   };
 
-  const handleChangeEmail = (event) => {
-    console.log(event.target.value);
+  const Label = (props) => {
+    return (
+      <>
+        <input
+          type="checkbox"
+          onChange={handleChange}
+          name={props.name}
+          value={props.value}
+        />
+        <label>{props.name}</label>
+      </>
+    );
   };
   return (
     <div className="App">
-      {/* //     <button onClick={handleClick1}>Click Me</button> */}
-      {/* //     <button onClick={(event) => handleClick(event, 3)}>Click Me</button> */}
-
-      {/* <button onClick={handleClick2(5)}>Click Me</button> */}
-
-      <form onSubmit={handleSubmitForm}>
-        <input name="email" onChange={handleChangeEmail} />
-        <button>Submit</button>
-      </form>
+      <Label name="phone1" value="Samsung" />
+      <Label name="phone2" value="Apple" />
+      <Label name="phone3" value="Huawei" />
     </div>
   );
 }
