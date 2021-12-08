@@ -1,7 +1,7 @@
 const Province = () => {
   return (
     <div>
-      <label for="province">Province:</label>
+      <label htmlFor="province">Province:</label>
       <select name="province" id="province">
         <option value="">SELECT</option>
         <option value="BANGKOK">Bangkok</option>
