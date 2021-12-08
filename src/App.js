@@ -4,7 +4,12 @@ import Hello from "./Lab/Hello";
 import Friendlist from "./Lab/Friendlist";
 
 function App() {
-  return <Hello />;
+  return (
+    <>
+      <Hello />
+      <Friendlist />
+    </>
+  );
 }
 
 export default App;
