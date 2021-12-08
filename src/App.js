@@ -1,11 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Content from "./Lab/Content";
+import Item from "./Component/Item";
 
 function App() {
   return (
     <>
-      <Content />
+      <button>Add</button>
+      <ul>
+        <Item title="Task 1" />
+        <Item title="Task 2" />
+      </ul>
     </>
   );
 }
