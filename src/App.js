@@ -16,25 +16,27 @@ function App() {
   //   return console.log(id);
   // };
 
-  const handleSubmitForm = (event) => {
-    event.preventDefault();
-    console.log("submited");
+  const handleChange = (event) => {
+    console.log(event.target.value);
   };
 
-  const handleChangeEmail = (event) => {
-    console.log(event.target.value);
+  const Option = (props) => {
+    return (
+      <>
+        <option>{props.name}</option>
+      </>
+    );
   };
   return (
     <div className="App">
-      {/* //     <button onClick={handleClick1}>Click Me</button> */}
-      {/* //     <button onClick={(event) => handleClick(event, 3)}>Click Me</button> */}
-
-      {/* <button onClick={handleClick2(5)}>Click Me</button> */}
-
-      <form onSubmit={handleSubmitForm}>
-        <input name="email" onChange={handleChangeEmail} />
-        <button>Submit</button>
-      </form>
+      <select onChange={handleChange}>
+        <Option name="SELECT" />
+        <Option name="Thailand" />
+        <Option name="USA" />
+        <Option name="England" />
+        <Option name="China" />
+        <Option name="Korea" />
+      </select>
     </div>
   );
 }
