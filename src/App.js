@@ -35,9 +35,9 @@ function App() {
   };
   return (
     <div className="App">
-      <Label name="phone1" value="Samsung" />
-      <Label name="phone2" value="Apple" />
-      <Label name="phone3" value="Huawei" />
+      <Label name="Phonebrand" value="Samsung" />
+      <Label name="Phonebrand" value="Apple" />
+      <Label name="Phonebrand" value="Huawei" />
     </div>
   );
 }
