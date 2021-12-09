@@ -2,20 +2,15 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  let state1 = useState("");
-  let value = "";
+  const [show, setShow] = useState(true);
 
-  let state = useState("");
-  const handleClick = (event) => {
-    value = "hide";
-    state[1](value);
-  };
+  if (show === false) {
+    return null;
+  }
 
   return (
     <div className="App">
-      <button onClick={handleClick} className={state[0]}>
-        Click to hide me
-      </button>
+      <button onClick={() => setShow(false)}>Click to hide me</button>
     </div>
   );
 }
