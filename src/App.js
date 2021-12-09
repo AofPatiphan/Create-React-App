@@ -1,33 +1,43 @@
 import "./App.css";
 import { useState } from "react";
 
-function App() {
-  const [phone, setPhone] = useState("");
-  const [error, setError] = useState("");
-  const handleClickCheck = () => {
-    if (phone === "") {
-      setError("Phone number is required");
-    } else if (isNaN(phone.trim())) {
-      setError("Invalid phone number");
-    } else if (phone.length !== 10) {
-      setError("Invalid length");
-    } else {
-      setError("");
-    }
-  };
+const mapProvinceDistrict = {
+  BANGKOK: ["BANGBON", "BANGKHAE", "BANGKAPI"],
+  PHUKET: ["KATHU", "THALANG"],
+  RANONG: ["KRA BURI", "KA POE"],
+};
 
-  const style = error === "" ? null : { borderColor: "red" };
+function App() {
+  const [selectedProvince, setSelectedProvince] = useState("");
+
+  const option =
+    selectedProvince === ""
+      ? null
+      : mapProvinceDistrict[selectedProvince].map((el) => (
+          <option value={el}>{el}</option>
+        ));
 
   return (
     <div className="App">
-      <input
-        type="text"
-        value={phone}
-        onChange={(event) => setPhone(event.target.value)}
-        style={style}
-      />
-      <button onClick={handleClickCheck}>Check</button>
-      {error ? <p style={{ color: "red" }}>{error}</p> : null}
+      <div>
+        <label>Ptovince : </label>
+        <select
+          value={selectedProvince}
+          onChange={(event) => setSelectedProvince(event.target.value)}
+        >
+          <option value="">SELECT</option>
+          <option value="BANGKOK">BANGKOK</option>
+          <option value="PHUKET">PHUKET</option>
+          <option value="RANONG">RANONG</option>
+        </select>
+      </div>
+      <div>
+        <label>District : </label>
+        <select>
+          <option value="">SELECT</option>
+          {option}
+        </select>
+      </div>
     </div>
   );
 }
