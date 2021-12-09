@@ -6,8 +6,6 @@ function App() {
   const [visible, setVisible] = useState(true);
 
   const handleClick = (event) => {
-    // value = "hide";
-    // state[0](value);
     setVisible(!visible); // วิธีลัด ถ้างงให้ดูด้านล่าง
 
     // if (visible === false) {
