@@ -11,7 +11,7 @@ function App() {
       <nav className="navbar navbar-light bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand text-info">To Do List App</a>
-          <form className="d-flex">
+          <form className="d-flex ">
             <input
               className="form-control me-2"
               type="search"
@@ -55,7 +55,7 @@ function App() {
           <div class="col-md-4 col-sm-6">
             <div class="card">
               <h5 class="card-header">Doing</h5>
-              <div class="card-body d-flex justify-content-between">
+              <div class="card-body d-flex justify-content-between flex-wrap">
                 <div>
                   <h5 class="card-title">Prototype</h5>
                   <p class="card-text">21/12/2021</p>
