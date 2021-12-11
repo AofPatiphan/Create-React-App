@@ -23,7 +23,11 @@ function App() {
       <button onClick={handleClick}>Add</button>
       <ul style={{ listStyle: "none" }}>
         {obj.map((el) => (
-          <li key={el.id}>{el.title}</li>
+          <li key={el.id}>
+            {el.title}
+            <button className="button">Edit</button>
+            <button className="button">Delete</button>
+          </li>
         ))}
       </ul>
     </div>
