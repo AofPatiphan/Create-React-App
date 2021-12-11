@@ -1,45 +1,24 @@
-import { useState } from "react/cjs/react.development";
 import "./App.css";
 
-let id = 3;
-
 function App() {
-  const arr = [1, 2, 3, 4, 2, 1];
+  const arr = [
+    { message: "Happy new year", name: "John", date: "1/1/2021 00.01AM" },
+    { message: "Programing is fun", name: "Jack", date: "30/6/2021 10.23AM" },
+    { message: "Oh Amazing !!!", name: "Sarah", date: "23/7/2021 08.17PM" },
+  ];
 
-  const [obj, setObj] = useState([
-    {
-      id: 1,
-      title: "A",
-    },
-    {
-      id: 2,
-      title: "B",
-    },
-  ]);
-
-  const handleClick = () => {
-    const input = window.prompt("Enter something");
-    const newState = [{ id: id++, title: input }, ...obj];
-    setObj(newState);
-  };
-
-  // const jsxArr = [<li>1</li>, <li>2</li>, <li>3</li>, <li>4</li>];
-  const result = arr.map((el) => <li>{el}</li>); // ทำแบบนี้
-  return (
-    <div className="App">
-      <button onClick={handleClick}>Add</button>
-      <ul>
-        {/* <li>{arr[0]}</li>
-        <li>{arr[1]}</li>
-        <li>{arr[2]}</li>
-        <li>{arr[3]}</li> */}
-        {/* {result} */}
-        {obj.map((el) => (
-          <li key={el.id}>{el.title}</li>
-        ))}
-      </ul>
+  const result = arr.map((el) => (
+    <div
+      style={{ border: "1px solid grey", margin: "20px", padding: "0 1rem" }}
+    >
+      <h2>{el.message}</h2>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <p style={{}}>Author: {el.name}</p>
+        <p style={{}}>{el.date}</p>
+      </div>
     </div>
-  );
+  ));
+  return <div className="">{result}</div>;
 }
 
 export default App;
